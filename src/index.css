@@ -7,4 +7,15 @@
 html, body, #root, .app {
   height: 100%;
   width: 100%;
+  @apply text-white
+}
+
+.gradient-text {
+  background-color: #8fb4ff;
+  background-image: linear-gradient(45deg, #8fb4ff, #ff8f94);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
 }

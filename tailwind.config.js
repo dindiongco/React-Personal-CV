@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary-400": "#3cd7a6",
-        "secondary-400": "#041510",
-        "accent-400": "#3cd7a6",
+        "primary-400": "#8fb4ff",
+        "secondary-400": "#001138",
+        "accent-400": "#ff8f94",
       },
       fontFamily: {
         anton: ["Anton", "sans-serif"],
