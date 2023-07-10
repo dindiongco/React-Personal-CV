@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import useMediaQuery from '../hooks/useMediaQuery'
 import { SelectedPage } from '../shared/types'
-import Link from './Link'
+import Link from '../components/Link'
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
 
 type Props = {
@@ -11,20 +11,20 @@ type Props = {
 }
 
 function Navbar({isTopOfPage, selectedPage, setSelectedPage}: Props) {
-    const isAboveMediumScreens = useMediaQuery('(min-width: 767px)')
+    const isAboveMediumScreens = useMediaQuery('(min-width: 769px)')
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
-    const navbarBG = isTopOfPage ? "" : "bg-secondary-400 drop-shadow"
+    const navbarBG = isTopOfPage ? "" : "bg-secondary-400"
 
   return (
-    <nav>
-        <div className={`${navbarBG} flex justify-between items-center fixed top-0 z-30 w-full py-6 px-8`}>
-            <span className='font-extrabold font-anton italic text-2xl'><a href="#" >DI</a></span>
+    <nav className='bg-black'>
+        <div className={`${navbarBG} flex justify-between w-5/6 mx-auto`}>
+            <span className='font-extrabold font-anton italic text-2xl py-2'><a href="#" >DI</a></span>
 
             {isAboveMediumScreens ? (<div className='flex gap-10 items-center'>
                 <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                 <Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                 <Link page="Experience" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                <Link page="Personal Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                 <Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
             </div>): 
             <button className="p-2"
@@ -35,7 +35,7 @@ function Navbar({isTopOfPage, selectedPage, setSelectedPage}: Props) {
         </div>
 
         {!isAboveMediumScreens && isMenuToggled && (
-            <div className="fixed right-0 bottom-0 z-40 h-full w-[300px] bg-secondary-400 drop-shadow-xl">
+            <div className="fixed right-0 bottom-0 w-[300px] h-full bg-secondary-400 z-40">
                 {/* CLOSE ICON */}
                 <div className="flex justify-end p-12">
                     <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -48,7 +48,7 @@ function Navbar({isTopOfPage, selectedPage, setSelectedPage}: Props) {
                     <Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                     <Link page="About" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                     <Link page="Experience" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
-                    <Link page="Personal Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
+                    <Link page="Projects" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                     <Link page="Contact" selectedPage={selectedPage} setSelectedPage={setSelectedPage}/>
                 </div>
             </div>

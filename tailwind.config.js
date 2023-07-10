@@ -21,9 +21,7 @@ export default {
         black: "900",
       },
       content: {
-        patternbg: "url('./assets/pattern-bg.svg')",
-        patterncurve: "url('./assets/pattern-curve.svg')",
-        patternquotes: "url('./assets/pattern-quotes.svg')",
+        patternlayersteps: "url('./assets/layered-steps-haikei.svg')",
       },
       screens: {
         xs: "320px",

@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "embla-carousel-react": "^8.0.0-rc07",
     "framer-motion": "^10.12.18",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.45.1",
+    "swiper": "^10.0.3"
   },
   "devDependencies": {
     "@types/node": "^20.4.0",
