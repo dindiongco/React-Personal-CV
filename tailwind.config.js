@@ -22,6 +22,9 @@ export default {
       },
       content: {
         patternlayersteps: "url('./assets/layered-steps-haikei.svg')",
+        start: "url('./assets/start-timeline.svg')",
+        line: "url('./assets/line.svg')",
+        circle: "url('./assets/circle.svg')",
       },
       screens: {
         xs: "320px",
