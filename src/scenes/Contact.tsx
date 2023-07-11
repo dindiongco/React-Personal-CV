@@ -33,7 +33,7 @@ function Contact({setSelectedPage}: Props) {
             </motion.div>
 
             {/* FORM AND IMAGE */}
-            <div className='mt-10 justify-between gap-20 md:flex'>
+            <div className='mt-10 justify-between gap-20 md:flex '>
                 <motion.div
                 className='mt-10 basis-3/5 md:mt-0'
                 initial='hidden' whileInView='visible' viewport={{once: false, amount: 0.5}} transition={{duration: 0.5}} variants={{
@@ -41,7 +41,7 @@ function Contact({setSelectedPage}: Props) {
                     visible: {opacity: 1, y: 0}
                 }}>
                     <form target='_blank' method='POST' action='https://formsubmit.co/5b59b5a8d02fb5c8aad08a75ad32beac'>
-                        <input className='mb-5 w-full rounded-lg px-5 py-3' type="text" placeholder='NAME' 
+                        <input className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' type="text" placeholder='NAME' 
                         {...register('name', {required:true, maxLength: 100})}/>
                         {errors.name && (
                             <p className='mt-1 text-primary-400'>
@@ -50,7 +50,7 @@ function Contact({setSelectedPage}: Props) {
                             </p>
                         )}
                         <input
-                            className='mb-5 w-full rounded-lg px-5 py-3'
+                            className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400'
                             type="text"
                             placeholder="EMAIL"
                             {...register("email", {
@@ -65,7 +65,7 @@ function Contact({setSelectedPage}: Props) {
                             {errors.email.type === "pattern" && "Invalid email address."}
                             </p>
                         )}
-                        <textarea className='mb-5 w-full rounded-lg px-5 py-3' placeholder='MESSAGE' rows={4} cols={50}
+                        <textarea className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' placeholder='MESSAGE' rows={4} cols={50}
                         {...register('message', {required:true, maxLength: 2000})}/>
                         {errors.message && (
                             <p className='mt-1 text-primary-500'>
