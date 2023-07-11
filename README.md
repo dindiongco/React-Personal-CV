@@ -1,3 +1,3 @@
-# React-Personal-CV
+# React-Personal-Site
 
-Personal CV built using React-Typescript and styled with Tailwind CSS.
+Personal Site built using React-Typescript and styled with Tailwind CSS.
