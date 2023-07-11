@@ -40,7 +40,7 @@ function Contact({setSelectedPage}: Props) {
                     hidden: {opacity: 0, y:50},
                     visible: {opacity: 1, y: 0}
                 }}>
-                    <form target='_blank' method='POST' action='https://formsubmit.co/5b59b5a8d02fb5c8aad08a75ad32beac'>
+                    <form target='_blank' method='POST' action='https://formsubmit.co/d42acb7a4cf7bb344d0276b8c02034e7'>
                         <input className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' type="text" placeholder='NAME' 
                         {...register('name', {required:true, maxLength: 100})}/>
                         {errors.name && (
