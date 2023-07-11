@@ -11,7 +11,7 @@ type Props = {
 
 function Experience({setSelectedPage}: Props) {
   return (
-    <section id='experience' className='md:h-full py-10'>
+    <section id='experience' className='md:h-full pt-40'>
         {/*  */}
         <motion.div className='md:h-[75%] py-8 w-5/6 mx-auto'
         onViewportEnter={() => setSelectedPage(SelectedPage.Experience)}>

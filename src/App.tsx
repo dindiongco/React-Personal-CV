@@ -5,6 +5,8 @@ import Home from './scenes/Home'
 import About from './scenes/About'
 import Contact from './scenes/Contact'
 import Experience from './scenes/Experience'
+import Projects from './scenes/Projects'
+import Footer from './scenes/Footer'
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(SelectedPage.Home)
@@ -29,7 +31,9 @@ function App() {
       <Home setSelectedPage={setSelectedPage}></Home>
       <About setSelectedPage={setSelectedPage}></About>
       <Experience setSelectedPage={setSelectedPage}></Experience>
+      <Projects setSelectedPage={setSelectedPage}></Projects>
       <Contact setSelectedPage={setSelectedPage}></Contact>
+      <Footer></Footer>
     </div>
   )
 }

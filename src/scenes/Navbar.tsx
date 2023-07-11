@@ -13,11 +13,11 @@ type Props = {
 function Navbar({isTopOfPage, selectedPage, setSelectedPage}: Props) {
     const isAboveMediumScreens = useMediaQuery('(min-width: 769px)')
     const [isMenuToggled, setIsMenuToggled] = useState<boolean>(false)
-    const navbarBG = isTopOfPage ? "" : "bg-secondary-400"
+    const navbarBG = isTopOfPage ? "" : "bg-secondary-400 drop-shadow"
 
   return (
-    <nav className='bg-black'>
-        <div className={`${navbarBG} flex justify-between w-5/6 mx-auto`}>
+    <nav className=''>
+        <div className={`${navbarBG} fixed top-0 z-30 flex justify-between w-full mx-auto px-8`}>
             <span className='font-extrabold font-anton italic text-2xl py-2'><a href="#" >DI</a></span>
 
             {isAboveMediumScreens ? (<div className='flex gap-10 items-center'>
