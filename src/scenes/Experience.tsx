@@ -1,9 +1,6 @@
 import { SelectedPage } from "../shared/types"
 import {motion} from 'framer-motion'
 import PrimaryHeading from "../shared/PrimaryHeading"
-import line from "../assets/line.svg"
-import middleLine from "../assets/middle-timeline.svg"
-import circle from "../assets/circle.svg"
 
 type Props = {
     setSelectedPage: (value: SelectedPage) => void
