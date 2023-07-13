@@ -19,7 +19,7 @@ function Contact({setSelectedPage}: Props) {
         onViewportEnter={() => setSelectedPage(SelectedPage.Contact)}>
             {/* HEADER */}
             <motion.div
-            className='md:w-3/5'
+            className='md:w-3/5 text-center md:text-left'
             initial='hidden' whileInView='visible' viewport={{once: false, amount: 0.5}} transition={{duration: 0.5}} variants={{
                 hidden: {opacity: 0, x:-50},
                 visible: {opacity: 1, x: 0}
@@ -33,7 +33,7 @@ function Contact({setSelectedPage}: Props) {
             </motion.div>
 
             {/* FORM AND IMAGE */}
-            <div className='mt-10 justify-between gap-20 md:flex '>
+            <div className='mt-10 justify-between gap-20 md:flex text-center md:text-left'>
                 <motion.div
                 className='mt-10 basis-3/5 md:mt-0'
                 initial='hidden' whileInView='visible' viewport={{once: false, amount: 0.5}} transition={{duration: 0.5}} variants={{

@@ -59,7 +59,7 @@ function Projects({setSelectedPage}: Props) {
         onViewportEnter={() => setSelectedPage(SelectedPage.Projects)}
         >
             <motion.div
-            className='mx-auto w-5/6' 
+            className='mx-auto w-5/6 text-center md:text-left' 
             initial='hidden' whileInView='visible' viewport={{once: true, amount: 0.5}} transition={{duration: 0.5}} variants={{
                 hidden: {opacity: 0, x:-50},
                 visible: {opacity: 1, x: 0}
@@ -67,22 +67,30 @@ function Projects({setSelectedPage}: Props) {
                 <div className='md:w-5/6'>
                     <PrimaryHeading>HERE ARE SOME OF MY <span className="gradient-text">PROJECTS</span>...</PrimaryHeading>
                     <p className="my-5 pb-20">
-                        I create projects to further my understanding and to learn new things whether it be languages or software development best practices.
+                        I create projects to further my understanding and to learn new things whether it be Programming languages or Software development best practices.
                     </p>
                 </div>
             </motion.div>
-            <div className="md:w-6/7 mx-auto w-full overflow-x-auto overflow-y-hidden">
+            <div className="md:w-5/6 mx-auto">
                 <Swiper
                 // install Swiper modules
                 modules={[Scrollbar, Navigation]}
-                spaceBetween={50}
-                slidesPerView={1}
+                centeredSlides={true}
+                loop={true}
                 breakpoints={{
-                    480: {
-                        slidesPerView: 3,
+                    425: {
+                        slidesPerView: 1,
                         spaceBetween: 10,
-                    }}
-                }
+                    },
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 10,
+                    },
+                    1440: {
+                        slidesPerView: 3,
+                        spaceBetween: 30,
+                    }
+                }}
                 scrollbar={{ draggable: true }}
                 navigation
                 onSwiper={(swiper) => console.log(swiper)}
@@ -90,7 +98,7 @@ function Projects({setSelectedPage}: Props) {
                 className="px-6"
                 >
                     {projects.map((project, index) => (
-                        <SwiperSlide>
+                        <SwiperSlide className="flex">
                             <Project 
                             key={`${project.name}-${index}`}
                             url={project.url}
