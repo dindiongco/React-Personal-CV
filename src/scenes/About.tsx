@@ -18,7 +18,7 @@ function About({setSelectedPage} : Props) {
             onViewportEnter={() => setSelectedPage(SelectedPage.About)} className='md:flex gap-20'>
                 {/* IMAGE */}
                 {isAboveMediumScreens && <div className='basis-[50%]'>
-                    <img className='md:h-[80%] md:w-[580%]' src={digitalNomadImg} alt="" />
+                    <img className='md:h-[80%] md:w-[80%]' src={digitalNomadImg} alt="" />
                 </div>}
                 {/* HEADER */}
                 <motion.div
@@ -33,7 +33,7 @@ function About({setSelectedPage} : Props) {
                 }}
                 >
             
-                    <PrimaryHeading>About Me</PrimaryHeading>
+                    <PrimaryHeading><span className='gradient-text'>About</span> Me</PrimaryHeading>
                     <p className='py-8'>My interest in the IT industry started mainly during my Economics course at university. I was part of many group projects where I was always learning about new technologies. I had to use software-based systems such as MATLAB and STATA MP to complete my assignments. With Economics being an analytical and data focused degree, I was able to practice these skills and further improve upon them. My experience at university has helped me realise that I enjoy working with the software aspect of technology and I look forward to building upon my programming knowledge.</p>
                     <p>I currently specialise in using Python and AWS Technologies to accelerate data processes along with being skilled at designing highly resilient web pages.</p>
                 </motion.div>
