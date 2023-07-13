@@ -10,8 +10,15 @@ type Props = {
 
 function Contact({setSelectedPage}: Props) {
     const {
-        register, formState: {errors}
+        register, trigger, formState: {errors}
     } = useForm()
+
+    const onSubmit = async (e: any) => {
+        const isValid = await trigger()
+        if (!isValid) {
+            e.preventDefault()
+        }
+    }
 
   return (
     <section id="contact" className="md:h-full pt-40">
@@ -40,13 +47,20 @@ function Contact({setSelectedPage}: Props) {
                     hidden: {opacity: 0, y:50},
                     visible: {opacity: 1, y: 0}
                 }}>
-                    <form target='_blank' method='POST' action='https://formsubmit.co/d42acb7a4cf7bb344d0276b8c02034e7'>
-                        <input className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' type="text" placeholder='NAME' 
-                        {...register('name', {required:true, maxLength: 100})}/>
+                    <form target='_blank' onSubmit={onSubmit} method='POST' action='https://formsubmit.co/d42acb7a4cf7bb344d0276b8c02034e7'>
                         {errors.name && (
-                            <p className='mt-1 text-primary-400'>
+                            <p className='text-red-600'>
                                 {errors.name.type === 'required' && 'This field is required.'}
                                 {errors.name.type === 'maxLength' && 'Max length is 100 characters.'}
+                            </p>
+                        )}
+                        <input className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' type="text" placeholder='NAME' 
+                        {...register('name', {required:true, maxLength: 100})}/>
+                        {errors.email && (
+                            <p className="text-red-600">
+                            {errors.email.type === "required" &&
+                                "This field is required."}
+                            {errors.email.type === "pattern" && "Invalid email address."}
                             </p>
                         )}
                         <input
@@ -58,21 +72,14 @@ function Contact({setSelectedPage}: Props) {
                             pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                             })}
                         />
-                        {errors.email && (
-                            <p className="mt-1 text-primary-500">
-                            {errors.email.type === "required" &&
-                                "This field is required."}
-                            {errors.email.type === "pattern" && "Invalid email address."}
-                            </p>
-                        )}
-                        <textarea className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' placeholder='MESSAGE' rows={4} cols={50}
-                        {...register('message', {required:true, maxLength: 2000})}/>
                         {errors.message && (
-                            <p className='mt-1 text-primary-500'>
+                            <p className='text-red-600'>
                                 {errors.message.type === 'required' && 'This field is required.'}
                                 {errors.message.type === 'maxLength' && 'Max length is 2000 characters.'}
                             </p>
                         )}
+                        <textarea className='mb-5 w-full rounded-lg px-5 py-3 text-secondary-400' placeholder='MESSAGE' rows={4} cols={50}
+                        {...register('message', {required:true, maxLength: 2000})}/>
                         <button type="submit" className='mt-5 rounded-lg bg-secondary-400 px-20 py-3 transition duration-500 hover:text-primary-400'>
                             SUBMIT
                         </button>
