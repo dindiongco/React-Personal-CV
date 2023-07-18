@@ -16,7 +16,7 @@ function Project({name, description, image, url}: Props) {
         <div className={overlayStyles}>
             <p className="text-2xl">{name}</p>
             <p className="mt-5">{description}</p>
-            <a target="_blank" href={url}><AiFillGithub className='w-[130%] h-[130%] pt-3'/></a>
+            <a target="_blank" href={url} className='pt-3'><AiFillGithub size={32}/></a>
         </div>
         <div className="flex justify-center items-center align-middle h-[400px] w-[300px] md:h-[320px] md:w-[400px]">
           <img src={image} alt={`${image}`} className='align-middle'/>
